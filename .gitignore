@@ -21,3 +21,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#firebase
+.env
+.firebase/
+.firebaserc
+firebase.json
+firestore.indexes.json
+firestore.rules
+functions/
+src/auth/
+src/base.js
+src/components/
