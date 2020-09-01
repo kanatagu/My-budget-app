@@ -30,6 +30,3 @@ firebase.json
 firestore.indexes.json
 firestore.rules
 functions/
-src/auth/
-src/base.js
-src/components/
