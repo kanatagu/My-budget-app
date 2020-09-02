@@ -14,10 +14,8 @@ const App = () => {
           <PrivateRoute exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
-          <div>
-          <Link to="/signup">登録はこちら</Link>
-          </div>
         </Switch>
+        <Link to="/signup">signup</Link>
       </Router>
     </AuthProvider>
   );
