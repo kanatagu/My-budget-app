@@ -1,18 +1,25 @@
 import React from 'react';
+import { Item } from './Item';
 
-export const ItemsList = () => {
+export const ItemsList = ({ items, setItems, }) => {
 
   return (
     <>
       <h3>History</h3>
       <div>Income list</div>
         <ul>
-          <li>祝金 <span>10,000円</span><button>✖️</button></li>
+          {items.map((item) => (
+            <Item 
+              items={items}
+              setItems={setItems}
+              text={items.text}
+              amount={items.amount}
+              key={items.id}
+              item={item}
+            />
+          ))}
         </ul>
-      <div>Expenses list</div>
-        <ul>
-          <li>買い物 <span>-5,000円</span><button>✖️</button></li>
-        </ul>
+      <div>Expense list</div>
     </>
   )
 }

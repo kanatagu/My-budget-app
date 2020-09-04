@@ -1,23 +1,47 @@
 import React, { useState } from 'react';
 
-export const AddItem = () => {
-  const [text, setText] = useState('');
-  const [amount, setAmount] = useState(0);
+export const AddItem = ({ inputText, setInputText, inputAmount, setInputAmount, items, setItems }) => {
+
   const [select, setSelect] = useState('+');
 
-  function handleChange(event) {
-    setSelect({value: event.target.value});
+  const handleChange = (e) => {
+    setSelect({value: e.target.value});
   }
 
+  const inputTextHandler = (e) => {
+    setInputText(e.target.value);
+    console.log(inputText)
+  };
+
+  const inputAmountHandler = (e) => {
+    setInputAmount(e.target.value)
+    console.log(inputAmount)
+  }
+
+  const submitItemHandler = (e) => {
+    e.preventDefault();
+    setItems([
+      ...items, {text: inputText, amount:inputAmount, id: Math.random() * 1000 }
+    ]);
+    setInputText("");
+    setInputAmount("");
+  }
+
+
   return (
-    <div>
-      <select defaultValue={select} onChange={handleChange}>
-        <option value="+">＋</option>
-        <option value="-" >-</option>
-      </select>
-      <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Text" />
-      <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Value" />
-      <button>Add</button>
-    </div>
+    <>
+      <form>
+        <select defaultValue={select} onChange={handleChange}>
+          <option value="+">＋</option>
+          <option value="-" >-</option>
+        </select>
+        <label>Text</label>
+        <input type="text" placeholder="Text" value={inputText} onChange={inputTextHandler} />
+        <label>Amount</label>
+        <input type="number" placeholder="Value" value={inputAmount} onChange={inputAmountHandler} />
+        <button type="submit" onClick={submitItemHandler}>Add</button>
+      </form>
+    </>
   )
+
 } 
