@@ -1,20 +1,20 @@
 import React from 'react';
 import { Item } from './Item';
 
-export const ItemsList = ({ items, setItems, }) => {
+export const ItemsList = ({ incomeItems, setIncomeItems, expenseItems, setExpenseItems }) => {
 
   return (
     <>
       <h3>History</h3>
       <div>Income list</div>
         <ul>
-          {items.map((item) => (
+          {incomeItems.map((item) => (
             <Item 
-              items={items}
-              setItems={setItems}
-              text={items.text}
-              amount={items.amount}
-              key={items.id}
+              incomeItems={incomeItems}
+              setIncomeItems={setIncomeItems}
+              text={incomeItems.text}
+              amount={incomeItems.amount}
+              key={incomeItems.id}
               item={item}
             />
           ))}

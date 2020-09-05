@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 
-export const AddItem = ({ inputText, setInputText, inputAmount, setInputAmount, items, setItems }) => {
+export const AddItem = ({ inputText, setInputText, inputAmount, setInputAmount, incomeItems, setIncomeItems, expenseItems, setExpenseItems, type, setType}) => {
 
-  const [select, setSelect] = useState('+');
 
-  const handleChange = (e) => {
-    setSelect({value: e.target.value});
+  const typeHandler = (e) => {
+    setType(e.target.value)
   }
 
   const inputTextHandler = (e) => {
@@ -20,20 +19,24 @@ export const AddItem = ({ inputText, setInputText, inputAmount, setInputAmount, 
 
   const submitItemHandler = (e) => {
     e.preventDefault();
-    setItems([
-      ...items, {text: inputText, amount:inputAmount, id: Math.random() * 1000 }
-    ]);
-    setInputText("");
-    setInputAmount("");
+    if ( type === 'inc' ) {
+      setIncomeItems([
+      ...incomeItems, {text: inputText, amount:inputAmount, id: Math.random() * 1000 }
+      ]);
+    } else if ( type === 'exp' ) {
+      setExpenseItems([
+        ...expenseItems, {text: inputText, amount:inputAmount, id: Math.random() * 1000 }
+      ]);
+    }
   }
 
 
   return (
     <>
       <form>
-        <select defaultValue={select} onChange={handleChange}>
-          <option value="+">＋</option>
-          <option value="-" >-</option>
+        <select onChange={typeHandler}>
+          <option value="inc">＋</option>
+          <option value="exp" >-</option>
         </select>
         <label>Text</label>
         <input type="text" placeholder="Text" value={inputText} onChange={inputTextHandler} />
