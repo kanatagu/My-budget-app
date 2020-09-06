@@ -10,7 +10,9 @@ function Home (props) {
 
   const [inputText, setInputText] = useState("");
   const [inputAmount, setInputAmount] = useState(0);
-  const [items, setItems] = useState([]);
+  const [incomeItems, setIncomeItems] = useState([]);
+  const [expenseItems, setExpenseItems] = useState([]);
+  const [type, setType] = useState("inc");
 
   return (
     <div>
@@ -22,10 +24,19 @@ function Home (props) {
         setInputText={setInputText}
         inputAmount={inputAmount}
         setInputAmount={setInputAmount}
-        items={items}
-        setItems={setItems}
+        incomeItems={incomeItems}
+        setIncomeItems={setIncomeItems}
+        expenseItems={expenseItems}
+        setExpenseItems={setExpenseItems}
+        type={type}
+        setType={setType}
       />
-      <ItemsList items={items} setItems={setItems} />
+      <ItemsList 
+        incomeItems={incomeItems} 
+        setIncomeItems={setIncomeItems} 
+        expenseItems={expenseItems}
+        setExpenseItems={setExpenseItems}
+      />
       <button onClick={() => app.auth().signOut()}>log out</button>
     </div>
   )
