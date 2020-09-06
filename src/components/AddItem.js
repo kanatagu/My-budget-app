@@ -5,6 +5,7 @@ export const AddItem = ({ inputText, setInputText, inputAmount, setInputAmount, 
 
   const typeHandler = (e) => {
     setType(e.target.value)
+    console.log(type)
   }
 
   const inputTextHandler = (e) => {
@@ -30,10 +31,9 @@ export const AddItem = ({ inputText, setInputText, inputAmount, setInputAmount, 
     }
   }
 
-
   return (
     <>
-      <form>
+      <form >
         <select onChange={typeHandler}>
           <option value="inc">＋</option>
           <option value="exp" >-</option>

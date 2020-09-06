@@ -1,5 +1,6 @@
 import React from 'react';
-import { Item } from './Item';
+import { IncomeItem } from './IncomeItem';
+import { ExpenseItem } from './ExpenseItem';
 
 export const ItemsList = ({ incomeItems, setIncomeItems, expenseItems, setExpenseItems }) => {
 
@@ -8,18 +9,30 @@ export const ItemsList = ({ incomeItems, setIncomeItems, expenseItems, setExpens
       <h3>History</h3>
       <div>Income list</div>
         <ul>
-          {incomeItems.map((item) => (
-            <Item 
+          {incomeItems.map((incomeItem) => (
+            <IncomeItem 
               incomeItems={incomeItems}
               setIncomeItems={setIncomeItems}
-              text={incomeItems.text}
-              amount={incomeItems.amount}
-              key={incomeItems.id}
-              item={item}
+              incomeText={incomeItem.text}
+              incomeAmount={incomeItem.amount}
+              incomeKey={incomeItem.id}
+              incomeItem={incomeItem}
             />
           ))}
         </ul>
       <div>Expense list</div>
+      <ul>
+          {expenseItems.map((expenseItem) => (
+            <ExpenseItem
+              expenseItems={expenseItems}
+              setExpenseItems={setExpenseItems}
+              expenseText={expenseItem.text}
+              expenseAmount={expenseItem.amount}
+              expenseKey={expenseItem.id}
+              expenseItem={expenseItem}
+            />
+          ))}
+        </ul>
     </>
   )
 }
