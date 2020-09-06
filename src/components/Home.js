@@ -18,7 +18,10 @@ function Home (props) {
     <div>
       <Header />
       <Balance />
-      <IncomeExpense />
+      <IncomeExpense 
+        incomeItems={incomeItems}
+        expenseItems={expenseItems}
+      />
       <AddItem
         inputText={inputText}
         setInputText={setInputText}
