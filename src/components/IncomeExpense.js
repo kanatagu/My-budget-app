@@ -1,15 +1,24 @@
 import React from 'react';
 
-export const IncomeExpense = () => {
+export const IncomeExpense = ({ incomeItems, expenseItems }) => {
+
+  const incomeAmounts = incomeItems.map(incomeItem => incomeItem.amount);
+
+  const incomeTotal = incomeAmounts.reduce((acc, cur) => acc += cur, 0);
+
+  const expenseAmounts = expenseItems.map(expenseItem => expenseItem.amount);
+
+  const expenseTotal = expenseAmounts.reduce((acc, cur) => acc += cur, 0);
+
   return (
     <div>
       <div>
         <h4>Income</h4>
-        <p>+50,000円</p>
+        <p>{incomeTotal}</p>
       </div>
       <div>
         <h4>Expense</h4>
-        <p>-5,000円</p>
+        <p>{expenseTotal}</p>
       </div>
     </div>
   )
