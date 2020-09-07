@@ -22,7 +22,7 @@ export const AddItem = ({ inputText, setInputText, inputAmount, setInputAmount, 
     e.preventDefault();
     if ( type === 'inc' ) {
       setIncomeItems([
-      ...incomeItems, {text: inputText, amount:parseInt(inputAmount), id: Math.random() * 1000 }
+      ...incomeItems, {text: inputText, amount: parseInt(inputAmount), id: Math.random() * 1000 }
       ]);
     } else if ( type === 'exp' ) {
       setExpenseItems([

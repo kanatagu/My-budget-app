@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import PrivateRoute from "./auth/PrivateRoute";
 import { AuthProvider } from "./auth/AuthProvider";

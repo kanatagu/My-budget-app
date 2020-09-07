@@ -13,12 +13,12 @@ export const IncomeExpense = ({ incomeItems, expenseItems }) => {
   return (
     <div>
       <div>
-        <h4>Income</h4>
-        <p>{incomeTotal}</p>
+        <h3>Income</h3>
+        <p>{incomeTotal}<span>円</span></p>
       </div>
       <div>
-        <h4>Expense</h4>
-        <p>{expenseTotal}</p>
+        <h3>Expense</h3>
+        <p>{expenseTotal}<span>円</span></p>
       </div>
     </div>
   )
