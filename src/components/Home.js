@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { app } from "../firebase/Firebase";
 import { Header } from './Header';
 import { Balance } from './Balance';
@@ -14,10 +14,37 @@ function Home (props) {
   const [expenseItems, setExpenseItems] = useState([]);
   const [type, setType] = useState("inc");
 
+// //Run ONCE when the app start
+//   useEffect(() => {
+//     getLocalItems();
+//   }, [incomeItems]);
+
+//   useEffect(() => {
+//     saveLocalItems();
+//   }, [incomeItems,])
+
+//   //save to local
+//   const saveLocalItems = () => {
+//     localStorage.setData("incomeItems", JSON.stringify(incomeItems));
+
+//   const getLocalItems = () => {
+//     if (localStorage.getData("incomeItems") === null ) {
+//       localStorage.setData("incomeItems", JSON.stringify([]))
+//     } else {
+//       let itemLocal = JSON.parse(localStorage.getData("incomeItems"))
+//       setData(itemLocal);
+//     }
+//   };
+
+
+
   return (
     <div>
       <Header />
-      <Balance />
+      <Balance 
+        incomeItems={incomeItems}
+        expenseItems={expenseItems}
+      />
       <IncomeExpense 
         incomeItems={incomeItems}
         expenseItems={expenseItems}
@@ -46,6 +73,3 @@ function Home (props) {
 }
 
 export default Home;
-
-
-

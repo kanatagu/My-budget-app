@@ -10,7 +10,9 @@ export const ExpenseItem = ({ expenseItems, setExpenseItems, expenseItem, expens
   return (
     <>
       <div>
-        <li>{expenseText}<span>{expenseAmount}</span>
+        <li className="item">
+        <div>{expenseText}</div>
+        <div>{expenseAmount}<span>円</span></div>
         <button onClick={deleteHandler}>×</button>
         </li>
       </div>
