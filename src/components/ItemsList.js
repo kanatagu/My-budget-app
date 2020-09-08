@@ -5,10 +5,9 @@ import { ExpenseItem } from './ExpenseItem';
 export const ItemsList = ({ incomeItems, setIncomeItems, expenseItems, setExpenseItems }) => {
 
   return (
-    <>
-      <h3>History</h3>
-      <div>Income list</div>
-        <ul>
+    <div className="list-container">
+      <h3>収入一覧</h3>
+        <ul className="list">
           {incomeItems.map((incomeItem) => (
             <IncomeItem 
               incomeItems={incomeItems}
@@ -20,8 +19,8 @@ export const ItemsList = ({ incomeItems, setIncomeItems, expenseItems, setExpens
             />
           ))}
         </ul>
-      <div>Expense list</div>
-      <ul>
+      <h3>支出一覧</h3>
+      <ul className="list">
           {expenseItems.map((expenseItem) => (
             <ExpenseItem
               expenseItems={expenseItems}
@@ -33,6 +32,6 @@ export const ItemsList = ({ incomeItems, setIncomeItems, expenseItems, setExpens
             />
           ))}
         </ul>
-    </>
+    </div>
   )
 }

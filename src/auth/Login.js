@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { withRouter } from "react-router";
 import { AuthContext } from "./AuthProvider";
+import { auth } from "../firebase/Firebase";
+import "firebase/auth";
 
 const Login = ({ history }) => {
   const { login } = useContext(AuthContext);
@@ -11,6 +13,7 @@ const Login = ({ history }) => {
     const { email, password } = event.target.elements;
     login(email.value, password.value, history);
   };
+
 
   return (
     <div>
