@@ -19,26 +19,12 @@ function Home (props) {
 
   useEffect (() => {
     getIncomeData();
+    getExpenseData();
   }, []);
 
-  // useEffect (() => {
-  //   addIncomeItem();
-  // }, [incomeItems]);
-
-  
-  // const getIncomeData = () => {
-  //   const col = db.collection('incomeItems')
-  //   return col.where('uid', '==', currentUser.uid).onSnapshot(query => {
-  //     const incomeData = []
-  //     query.forEach(doc => doc.push({...doc.incomeData(), docId: doc.id}))
-  //     setIncomeItems(incomeData);
-  //   })
-  // }
-
-  const col = db.collection('incomeItems')
-
   const getIncomeData = () => {
-    col.where('uid', '==', currentUser.uid).onSnapshot(query => {
+    const incomeData = db.collection('incomeItems')
+    incomeData.where('uid', '==', currentUser.uid).onSnapshot(query => {
       const incomeItems = []
       query.forEach(doc => incomeItems.push({...doc.data(), docId: doc.id}))
       setIncomeItems(incomeItems);
@@ -46,15 +32,50 @@ function Home (props) {
   }
 
   const addIncome = (text, amount) => {
-    db.collection('incomeItems').add({
+    const docId = Math.random().toString(32).substring(2);
+    db.collection('incomeItems').doc(docId).set({
       uid: currentUser.uid,
       text,
       amount,
     })
+    .then(response => {
+      setIncomeItems([
+        ...incomeItems, {text: inputText, amount: inputAmount, docId: docId}
+      ]); //docIDを追加
+    })
+  }
+  console.log(incomeItems)
+
+  const getExpenseData = () => {
+    const expenseData = db.collection('expenseItems')
+    expenseData.where('uid', '==', currentUser.uid).onSnapshot(query => {
+      const expenseItems = []
+      query.forEach(doc => expenseItems.push({...doc.data(), docId: doc.id}))
+      setIncomeItems(expenseItems);
+    })
   }
 
-  const deleteIncome = ({ docId }) => {
+  const addExpense = (text, amount) => {
+    const docId = Math.random().toString(32).substring(2);
+    db.collection('expenseItems').doc(docId).set({
+      uid: currentUser.uid,
+      text,
+      amount,
+    })
+    .then(response => {
+      setExpenseItems([
+        ...expenseItems, {text: inputText, amount:inputAmount, docId: docId }
+      ]); //docIdを追加
+    })
+  }
+  console.log(expenseItems)
+
+  const deleteIncome = (docId) => {
     db.collection('incomeItems').doc(docId).delete()
+  }
+
+  const deleteExpense = (docId) => {
+    db.collection('expenseItems').doc(docId).delete()
   }
 
   return (
@@ -68,26 +89,22 @@ function Home (props) {
         <IncomeExpense 
           incomeItems={incomeItems}
           expenseItems={expenseItems}
-          deleteIncome={deleteIncome}
         />
         <AddItem
           addIncome={addIncome}
+          addExpense={addExpense}
           inputText={inputText}
           setInputText={setInputText}
           inputAmount={inputAmount}
           setInputAmount={setInputAmount}
-          incomeItems={incomeItems}
-          setIncomeItems={setIncomeItems}
-          expenseItems={expenseItems}
-          setExpenseItems={setExpenseItems}
           type={type}
           setType={setType}
         />
         <ItemsList 
+          deleteIncome={deleteIncome}
+          deleteExpense={deleteExpense}
           incomeItems={incomeItems} 
-          setIncomeItems={setIncomeItems} 
           expenseItems={expenseItems}
-          setExpenseItems={setExpenseItems}
         />
       </div>
       <button className="logout-btn"onClick={() => auth.signOut()}>log out</button>

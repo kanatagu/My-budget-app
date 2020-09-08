@@ -2,7 +2,7 @@ import React from 'react';
 import { IncomeItem } from './IncomeItem';
 import { ExpenseItem } from './ExpenseItem';
 
-export const ItemsList = ({ incomeItems, setIncomeItems, expenseItems, setExpenseItems }) => {
+export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseItems }) => {
 
   return (
     <div className="list-container">
@@ -10,11 +10,9 @@ export const ItemsList = ({ incomeItems, setIncomeItems, expenseItems, setExpens
         <ul className="list">
           {incomeItems.map((incomeItem) => (
             <IncomeItem 
-              incomeItems={incomeItems}
-              setIncomeItems={setIncomeItems}
+              deleteIncome={deleteIncome}
               incomeText={incomeItem.text}
               incomeAmount={incomeItem.amount}
-              incomeKey={incomeItem.id}
               incomeItem={incomeItem}
             />
           ))}
@@ -23,11 +21,9 @@ export const ItemsList = ({ incomeItems, setIncomeItems, expenseItems, setExpens
       <ul className="list">
           {expenseItems.map((expenseItem) => (
             <ExpenseItem
-              expenseItems={expenseItems}
-              setExpenseItems={setExpenseItems}
+              deleteExpense={deleteExpense}
               expenseText={expenseItem.text}
               expenseAmount={expenseItem.amount}
-              expenseKey={expenseItem.id}
               expenseItem={expenseItem}
             />
           ))}

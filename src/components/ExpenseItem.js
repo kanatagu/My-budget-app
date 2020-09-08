@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const ExpenseItem = ({ expenseItems, setExpenseItems, expenseItem, expenseText, expenseAmount, expenseKey }) => {
+export const ExpenseItem = ({ deleteExpense, expenseItem, expenseText, expenseAmount, expenseKey }) => {
 
   const deleteHandler = () => {
-    setExpenseItems(expenseItems.filter((e) => e.id !== expenseItem.id));
+    deleteExpense(expenseItem.docId);
   }
 
 

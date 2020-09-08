@@ -1,38 +1,28 @@
 import React from 'react';
 
-export const AddItem = ({ addIncome, inputText, setInputText, inputAmount, setInputAmount, incomeItems, setIncomeItems, expenseItems, setExpenseItems, type, setType}) => {
+export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputAmount, setInputAmount, type, setType}) => {
 
 
   const typeHandler = (e) => {
     setType(e.target.value)
-    console.log(type)
   }
 
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
-    console.log(inputText)
   };
 
   const inputAmountHandler = (e) => {
     setInputAmount(parseInt(e.target.value))
-    console.log(inputAmount)
   }
 
   const submitItemHandler = (e) => {
     e.preventDefault();
     if ( type === 'inc' ) {
-      setIncomeItems([
-      ...incomeItems, {text: inputText, amount: inputAmount, id: Math.random() * 1000 }
-      ]);
-
-      addIncome(inputText, inputAmount)
+      addIncome(inputText, inputAmount) 
 
     } else if ( type === 'exp' ) {
-      setExpenseItems([
-        ...expenseItems, {text: inputText, amount:inputAmount, id: Math.random() * 1000 }
-      ]);
+      addExpense(inputText, inputAmount)
     }
-    console.log(incomeItems)
   }
 
   return (

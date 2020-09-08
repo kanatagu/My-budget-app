@@ -1,10 +1,9 @@
 import React from 'react';
 
-export const IncomeItem = ({ deleteIncome, incomeItems, setIncomeItems, incomeItem, incomeText, incomeAmount, incomeKey }) => {
+export const IncomeItem = ({ deleteIncome, incomeItem, incomeText, incomeAmount }) => {
 
   const deleteHandler = () => {
-    // setIncomeItems(incomeItems.filter((e) => e.id !== incomeItem.id));
-    deleteIncome({ docId: incomeItems.docId })
+    deleteIncome(incomeItem.docId);
   }
 
 
