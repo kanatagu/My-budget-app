@@ -13,7 +13,10 @@ export const Balance = ({ incomeItems, expenseItems }) => {
   const balance = incomeTotal - expenseTotal
 
   return (
-    <h2>{balance}<span>円</span></h2>
+    <div className="balance-container">
+      <h2>残高</h2>
+      <p className="balance">{balance}<span>円</span></p>
+    </div>
   )
 }
 

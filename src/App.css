@@ -1,4 +1,134 @@
+html {
+  font-size: 62.5%; 
+}
+
+* {
+  font-size: 1.8rem;
+  color: #393939;
+  background: #efefef;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  margin: 0;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.title { 
+  font-size: 3.0rem;
+  margin: 15px 0;
+  text-align: center;
+}
+
+h2 {
+
+}
+
+h3 {
+  padding: 10px 0;
+}
+
+.balance {
+  font-size: 4.0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.inc-exp-container {
+  margin-bottom: 15px;
+  padding: 20px 0;
+}
+
+.inc-container {
+
+}
+
+.income-total {
+  padding: 20px;
+  background-color: white;
+  color: #2ecc71;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.income-yen {
+  color: #2ecc71;
+  font-size: 1.5rem;
+}
+
+.expense-total {
+  padding: 20px;
+  background-color: white;
+  color: #c0392b;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.expense-yen {
+  color: #c0392b;
+  font-size: 1.5rem;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+form input[type="text"] ,input[type="number"] {
+  height: 35px;
+}
+
+
+.add-btn {
+  cursor: pointer;
+  background-color: #3366FF;
+  color: #fff;
+  display: inline-block;
+  padding: 0.5em 1em;
+  width: 250px;
+  text-decoration: none;
+  border-bottom: solid 4px #627295;
+  border-radius: 5px;
+}
+
+.add-btn:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;/*線を消す*/
+}
+
+.list {
+  line-style-type: none;
+}
+
+
 .item {
   display: flex;
-  align-items: center;
+}
+
+.list-container {
+
+  background-color: pink;
+}
+
+.logout-btn {
+  margin-top: 150px;
 }

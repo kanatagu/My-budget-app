@@ -1,35 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export const AddItem = ({ inputText, setInputText, inputAmount, setInputAmount, incomeItems, setIncomeItems, expenseItems, setExpenseItems, type, setType}) => {
+export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputAmount, setInputAmount, type, setType}) => {
 
 
   const typeHandler = (e) => {
     setType(e.target.value)
-    console.log(type)
   }
 
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
-    console.log(inputText)
   };
 
   const inputAmountHandler = (e) => {
-    setInputAmount(e.target.value)
-    console.log(inputAmount)
+    setInputAmount(parseInt(e.target.value))
   }
 
   const submitItemHandler = (e) => {
     e.preventDefault();
     if ( type === 'inc' ) {
-      setIncomeItems([
-      ...incomeItems, {text: inputText, amount: parseInt(inputAmount), id: Math.random() * 1000 }
-      ]);
+      addIncome(inputText, inputAmount) 
+
     } else if ( type === 'exp' ) {
-      setExpenseItems([
-        ...expenseItems, {text: inputText, amount:parseInt(inputAmount), id: Math.random() * 1000 }
-      ]);
+      addExpense(inputText, inputAmount)
     }
-    console.log(incomeItems)
   }
 
   return (
@@ -39,11 +32,15 @@ export const AddItem = ({ inputText, setInputText, inputAmount, setInputAmount, 
           <option value="inc">＋</option>
           <option value="exp" >-</option>
         </select>
-        <label>Text</label>
-        <input type="text" placeholder="Text" value={inputText} onChange={inputTextHandler} />
-        <label>Amount</label>
-        <input type="number" placeholder="Value" value={inputAmount} onChange={inputAmountHandler} />
-        <button type="submit" onClick={submitItemHandler}>Add</button>
+        <div>
+          <label>内容</label>
+          <input type="text" value={inputText} onChange={inputTextHandler} />
+        </div>
+        <div>
+          <label>金額</label>
+          <input type="number" value={inputAmount} onChange={inputAmountHandler}/>円
+        </div>
+        <button className="add-btn" type="submit" onClick={submitItemHandler}>追加</button>
       </form>
     </>
   )
