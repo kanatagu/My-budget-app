@@ -45,13 +45,17 @@ function Home (props) {
     })
   }
   console.log(incomeItems)
+  
+  const deleteIncome = (docId) => {
+    db.collection('incomeItems').doc(docId).delete()
+  }
 
   const getExpenseData = () => {
     const expenseData = db.collection('expenseItems')
     expenseData.where('uid', '==', currentUser.uid).onSnapshot(query => {
       const expenseItems = []
       query.forEach(doc => expenseItems.push({...doc.data(), docId: doc.id}))
-      setIncomeItems(expenseItems);
+      setExpenseItems(expenseItems);
     })
   }
 
@@ -70,9 +74,7 @@ function Home (props) {
   }
   console.log(expenseItems)
 
-  const deleteIncome = (docId) => {
-    db.collection('incomeItems').doc(docId).delete()
-  }
+
 
   const deleteExpense = (docId) => {
     db.collection('expenseItems').doc(docId).delete()
