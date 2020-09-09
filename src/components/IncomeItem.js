@@ -9,13 +9,9 @@ export const IncomeItem = ({ deleteIncome, incomeItem, incomeText, incomeAmount 
 
   return (
     <>
-      <div>
-        <li className="item">
-          <div>{incomeText}</div>
-          <div>{incomeAmount}<span> 円</span></div>
-        <button onClick={deleteHandler}>×</button>
-        </li>
-      </div>
+      <li><div>{incomeText}<span className="money-plus">{incomeAmount} 円</span></div>
+        <button className="delete-btn" onClick={deleteHandler}>×</button>
+      </li>
     </>
   )
 }

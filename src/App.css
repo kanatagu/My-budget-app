@@ -14,41 +14,37 @@ html {
 
 
 body {
-  margin: 0;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
   margin: 0 auto;
+  width: 300px;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  min-height: 100vh;
+  /* display: flex; */
+  /* justify-content: center;  */
+}
+
+.container {
+  /* margin: 0 auto; */
+  /* width: 300px; */
+
 }
 
 .title { 
   font-size: 3.0rem;
   margin: 15px 0;
+  padding-bottom: 20px;
   text-align: center;
 }
 
 h2 {
-
-}
-
-h3 {
   padding: 10px 0;
 }
+
 
 .balance {
   font-size: 4.0rem;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-form {
-
-}
-
-.container {
-  margin: 0 auto;
 }
 
 .inc-exp-container {
@@ -86,25 +82,38 @@ form {
   font-size: 1.5rem;
 }
 
+
+form {
+
+}
+
+.add-items {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
 label {
   display: inline-block;
   margin: 10px 0;
+  padding-right: 5px;
 }
 
 form input[type="text"] ,input[type="number"] {
-  height: 35px;
+  height: 40px;
+  width: 230px;
 }
 
-
 .add-btn {
+  margin-top: 30px;
   cursor: pointer;
-  background-color: #3366FF;
+  background-color: #6495ED;
   color: #fff;
   display: inline-block;
   padding: 0.5em 1em;
-  width: 250px;
+  width: 100%;
   text-decoration: none;
-  border-bottom: solid 4px #627295;
+  border: solid 4px #6495ED;
   border-radius: 5px;
 }
 
@@ -115,19 +124,66 @@ form input[type="text"] ,input[type="number"] {
   border-bottom: none;/*線を消す*/
 }
 
-.list {
-  line-style-type: none;
-}
-
-
-.item {
-  display: flex;
-}
-
 .list-container {
-
-  background-color: pink;
+  margin-top: 60px;
 }
+
+.list {
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.list li {
+  position: relative;
+}
+
+.list li div {
+  padding: 10px 0;
+  text-align: center;
+  border-bottom: 1px solid #A9A9A9;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.money-minus {
+  color: #c0392b;
+}
+
+.money-plus {
+  color: #2ecc71;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 25%;
+  right: -10%;
+  opacity: 0;
+  border-radius: 50%;
+  line-height: 20px;
+  width: 25px;
+  height: 25px; 
+  color: #F08080;
+  border: 1px solid #F08080;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+  transition : .3s;
+}
+
+.list li:hover .money-plus {
+  margin-right: 15px;
+  transition : .3s;
+}
+
+.list li:hover .money-minus {
+  margin-right: 15px;
+  transition : .3s;
+}
+
+
 
 .logout-btn {
   margin-top: 150px;

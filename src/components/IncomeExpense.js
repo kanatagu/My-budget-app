@@ -13,11 +13,11 @@ export const IncomeExpense = ({ incomeItems, expenseItems }) => {
   return (
     <div className="inc-exp-container">
       <div className="inc-container">
-        <h3>収入</h3>
+        <h2>収入</h2>
         <p className="income-total">{incomeTotal}<span className="income-yen">円</span></p>
       </div>
       <div>
-        <h3>支出</h3>
+        <h2>支出</h2>
         <p className="expense-total">{expenseTotal}<span className="expense-yen">円</span></p>
       </div>
     </div>
