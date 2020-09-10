@@ -31,11 +31,11 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
         <option value="inc">＋</option>
         <option value="exp" >-</option>
       </select>
-      <div className="add-items">
+      <div className="add-text">
         <label>内容</label>
         <input type="text" value={inputText} onChange={inputTextHandler} />
       </div>
-      <div className="add-items">
+      <div className="add-amount">
         <label>金額</label>
         <input type="number" value={inputAmount} onChange={inputAmountHandler}/>円
       </div>

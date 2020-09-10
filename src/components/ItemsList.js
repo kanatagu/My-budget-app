@@ -6,28 +6,32 @@ export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseIte
 
   return (
     <div className="list-container">
-      <h3>収入一覧</h3>
+      <div className="income-list">
+        <h3>収入一覧</h3>
+          <ul className="list">
+            {incomeItems.map((incomeItem) => (
+              <IncomeItem 
+                deleteIncome={deleteIncome}
+                incomeText={incomeItem.text}
+                incomeAmount={incomeItem.amount}
+                incomeItem={incomeItem}
+              />
+            ))}
+          </ul>
+      </div>
+      <div className="expense-list">
+        <h3>支出一覧</h3>
         <ul className="list">
-          {incomeItems.map((incomeItem) => (
-            <IncomeItem 
-              deleteIncome={deleteIncome}
-              incomeText={incomeItem.text}
-              incomeAmount={incomeItem.amount}
-              incomeItem={incomeItem}
-            />
-          ))}
-        </ul>
-      <h3>支出一覧</h3>
-      <ul className="list">
-          {expenseItems.map((expenseItem) => (
-            <ExpenseItem
-              deleteExpense={deleteExpense}
-              expenseText={expenseItem.text}
-              expenseAmount={expenseItem.amount}
-              expenseItem={expenseItem}
-            />
-          ))}
-        </ul>
+            {expenseItems.map((expenseItem) => (
+              <ExpenseItem
+                deleteExpense={deleteExpense}
+                expenseText={expenseItem.text}
+                expenseAmount={expenseItem.amount}
+                expenseItem={expenseItem}
+              />
+            ))}
+          </ul>
+      </div>
     </div>
   )
 }
