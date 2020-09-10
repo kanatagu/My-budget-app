@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { auth, db } from "../firebase/Firebase";
+import { db } from "../firebase/Firebase";
 import { Header } from './Header';
 import { Balance } from './Balance';
 import { IncomeExpense } from './IncomeExpense';
@@ -81,7 +81,7 @@ function Home (props) {
   }
 
   return (
-    <div>
+    <>
       <Header />
       <div className="container">
         <Balance 
@@ -109,8 +109,7 @@ function Home (props) {
           expenseItems={expenseItems}
         />
       </div>
-      <button className="logout-btn"onClick={() => auth.signOut()}>log out</button>
-    </div>
+    </>
   )
 }
 
