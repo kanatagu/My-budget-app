@@ -8,7 +8,7 @@ export const Header = () => {
 
   return (
     <div className="header-form">
-      <button className="logout-btn"onClick={() => auth.signOut()}>ログアウト</button>
+      <button className="logout-btn"onClick={() => auth.signOut()}>Sign Out</button>
       <h1 className="title">2020年9月</h1>
     </div>
   )

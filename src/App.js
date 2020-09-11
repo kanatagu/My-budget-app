@@ -13,10 +13,9 @@ const App = () => {
       <Router>
         <Switch>
           <PrivateRoute exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/login" component={Login} SignUp={SignUp} />
           <Route exact path="/signup" component={SignUp} />
         </Switch>
-        <Link to="/signup">signup</Link>
       </Router>
     </AuthProvider>
   );

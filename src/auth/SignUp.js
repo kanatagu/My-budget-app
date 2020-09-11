@@ -13,18 +13,20 @@ const SignUp = ({ history }) => {
   };
 
   return (
-    <div>
-      <h1>Sign up</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email
-          <input name="email" type="email" placeholder="Email" />
-        </label>
-        <label>
-          Password
-          <input name="password" type="password" placeholder="Password" />
-        </label>
-        <button type="submit">Sign Up</button>
+    <div className="auth-container">
+      <h1>Sign Up</h1>
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <div className="auth-form-item">
+          <label className="auth-label" for="email">E-mail Address</label>
+          <input className="auth-input" name="email" type="email" placeholder="email@gmail.com" />
+        </div>
+        <div className="auth-form-item">
+          <label className="auth-label" for="password">Password</label>
+          <input className="auth-input" name="password" type="password" placeholder="Password"/>
+        </div>
+        <div className="btn-panel">
+          <button className="auth-btn" type="submit">SIGN UP</button>
+        </div>
       </form>
     </div>
   );

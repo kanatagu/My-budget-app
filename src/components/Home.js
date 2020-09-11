@@ -31,7 +31,14 @@ function Home (props) {
     })
   }
 
+
   const addIncome = (text, amount) => {
+    
+    let len = incomeItems.length;
+    for (let i =0; i < len; i++) {
+      console.log(i.toLocaleString())
+    }
+
     const docId = Math.random().toString(32).substring(2);
     db.collection('incomeItems').doc(docId).set({
       uid: currentUser.uid,

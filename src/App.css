@@ -4,20 +4,92 @@ html {
 
 * {
   font-size: 1.8rem;
-  color: #393939;
-  background: #efefef;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
+  background: #efefef;
+  color: #393939;
   margin: 0 auto;
   width: 300px;
   font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
   min-height: 100vh;
-  /* display: flex; */
-  /* justify-content: center;  */
+}
+
+/* AUTHスタイル */
+.auth-container {
+  background: #fafafa;
+  margin: 3em auto;
+  /* padding: 0 1em; */
+  width: 300px;
+  height: 530px;
+}
+
+.auth-container > h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  padding: 1em 0;
+  background: #fafafa;
+}
+
+.auth-form {
+  width: 300px;
+  display: block;
+}
+
+.auth-form-item {
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.auth-label {
+  margin: 10px 0;
+  text-align: left;
+  width: 250px;
+}
+
+.auth-input {
+  display: inline-block;
+  background: #fafafa;
+  height: 40px;
+  width:250px;
+  color: #666;
+  font-size: 1.2rem;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #c0c0c0;
+}
+
+.btn-panel {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.auth-btn {
+  background: #f16272;
+  outline: none;
+  border: 1px solid #f16272;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  width: 180px;
+}
+
+.auth-btn:hover {
+  background: #ee3e52;
+}
+
+.forSignup {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: #8c8c8c;
+  margin: 0 auto;
 }
 
 
@@ -28,6 +100,7 @@ body {
   } 
 
   .container { 
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
   }
@@ -40,17 +113,23 @@ body {
 }
 
 .logout-btn {
-  font-size: 1.0rem;
+  font-size: 1.2rem;
   display: block;
   margin: 0 0 0 auto;
   padding: 10px;
-  background: #E9967A;
-  color: white;
-  outline: none;
   text-decoration: none;
-  border: solid 1px #E9967A;
+  background: #f16272;
+  outline: none;
+  border: 1px solid #f16272;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 1px;
   border-radius: 5px;
 } 
+
+.logout-btn:hover {
+  background: #ee3e52;
+}
 
 .title { 
   font-size: 3.0rem;
@@ -104,7 +183,7 @@ h2 {
 
 .income-total {
   padding: 20px;
-  background-color: white;
+  background-color: #fafafa;
   color: #2ecc71;
   font-size: 2.5rem;
   text-align: center;
@@ -117,7 +196,7 @@ h2 {
 
 .expense-total {
   padding: 20px;
-  background-color: white;
+  background-color: #fafafa;
   color: #c0392b;
   font-size: 2.5rem;
   text-align: center;
@@ -153,10 +232,15 @@ label {
   padding-right: 5px;
 }
 
+form > select {
+  background: #fafafa;
+}
+
 form input[type="text"] ,input[type="number"] {
   height: 40px;
   width: 230px;
   border: 1px solid #A9A9A9;
+  background: #fafafa;
 }
 
 form  select:focus, input[type="text"]:focus ,input[type="number"]:focus {
