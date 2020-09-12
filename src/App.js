@@ -16,7 +16,6 @@ const App = () => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
         </Switch>
-        <Link to="/signup">signup</Link>
       </Router>
     </AuthProvider>
   );

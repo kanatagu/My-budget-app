@@ -14,11 +14,11 @@ export const IncomeExpense = ({ incomeItems, expenseItems }) => {
     <div className="inc-exp-container">
       <div className="inc-container">
         <h2>収入</h2>
-        <p className="income-total">{incomeTotal}<span className="income-yen">円</span></p>
+        <p className="income-total">{Number(incomeTotal).toLocaleString()}<span className="income-yen">円</span></p>
       </div>
       <div className="exp-container">
         <h2>支出</h2>
-        <p className="expense-total">{expenseTotal}<span className="expense-yen">円</span></p>
+        <p className="expense-total">{Number(expenseTotal).toLocaleString()}<span className="expense-yen">円</span></p>
       </div>
     </div>
   )
