@@ -15,7 +15,7 @@ export const Balance = ({ incomeItems, expenseItems }) => {
   return (
     <div className="balance-container">
       <h2>残高</h2>
-      <p className="balance">{Number(balance).toLocaleString()}<span>円</span></p>
+      <div className="balance">{Number(balance).toLocaleString()}<span >円</span></div>
     </div>
   )
 }

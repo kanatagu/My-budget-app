@@ -2,9 +2,8 @@ import React from 'react';
 
 export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputAmount, setInputAmount, type, setType}) => {
 
-
   const typeHandler = (e) => {
-    setType(e.target.value)
+    setType(e.target.value);
   }
 
   const inputTextHandler = (e) => {
@@ -12,16 +11,19 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
   };
 
   const inputAmountHandler = (e) => {
-    setInputAmount(parseInt(e.target.value))
+    setInputAmount(parseInt(e.target.value));
   }
 
   const submitItemHandler = (e) => {
     e.preventDefault();
     if ( type === 'inc' ) {
       addIncome(inputText, inputAmount) 
-
+      setInputText("");
+      setInputAmount("");
     } else if ( type === 'exp' ) {
       addExpense(inputText, inputAmount)
+      setInputText("");
+      setInputAmount("");
     }
   }
 

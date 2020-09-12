@@ -7,7 +7,7 @@ import { AddItem } from './AddItem';
 import { ItemsList } from './ItemsList';
 import { AuthContext } from '../auth/AuthProvider';
 
-function Home (props) {
+function Home () {
 
   const [inputText, setInputText] = useState("");
   const [inputAmount, setInputAmount] = useState(0);
@@ -24,31 +24,27 @@ function Home (props) {
 
   const getIncomeData = () => {
     const incomeData = db.collection('incomeItems')
-    incomeData.where('uid', '==', currentUser.uid).onSnapshot(query => {
+    incomeData.where('uid', '==', currentUser.uid).orderBy('sortId').onSnapshot(query => {
       const incomeItems = []
       query.forEach(doc => incomeItems.push({...doc.data(), docId: doc.id}))
       setIncomeItems(incomeItems);
     })
   }
 
-
   const addIncome = (text, amount) => {
-    
-    let len = incomeItems.length;
-    for (let i =0; i < len; i++) {
-      console.log(i.toLocaleString())
-    }
-
+    const sortId = incomeItems.length +1;
+    console.log(sortId)
     const docId = Math.random().toString(32).substring(2);
     db.collection('incomeItems').doc(docId).set({
       uid: currentUser.uid,
       text,
       amount,
+      sortId,
     })
     .then(response => {
       setIncomeItems([
-        ...incomeItems, {text: inputText, amount: inputAmount, docId: docId}
-      ]); //docIDを追加
+        ...incomeItems, {text: inputText, amount: inputAmount, docId: docId, sortId: sortId }
+      ]); //docIdとsortIdを追加
     })
   }
   console.log(incomeItems)
@@ -59,7 +55,7 @@ function Home (props) {
 
   const getExpenseData = () => {
     const expenseData = db.collection('expenseItems')
-    expenseData.where('uid', '==', currentUser.uid).onSnapshot(query => {
+    expenseData.where('uid', '==', currentUser.uid).orderBy('sortId').onSnapshot(query => {
       const expenseItems = []
       query.forEach(doc => expenseItems.push({...doc.data(), docId: doc.id}))
       setExpenseItems(expenseItems);
@@ -67,16 +63,18 @@ function Home (props) {
   }
 
   const addExpense = (text, amount) => {
+    const sortId = expenseItems.length +1;
     const docId = Math.random().toString(32).substring(2);
     db.collection('expenseItems').doc(docId).set({
       uid: currentUser.uid,
       text,
       amount,
+      sortId,
     })
     .then(response => {
       setExpenseItems([
-        ...expenseItems, {text: inputText, amount:inputAmount, docId: docId }
-      ]); //docIdを追加
+        ...expenseItems, {text: inputText, amount:inputAmount, docId: docId, sortId: sortId}
+      ]); //docIdとsortIdを追加
     })
   }
   console.log(expenseItems)

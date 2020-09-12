@@ -19,11 +19,11 @@ const Login = ({ history }) => {
       <h1>Sign In</h1>
       <form className="auth-form" onSubmit={handleSubmit}>
         <div className="auth-form-item">
-          <label className="auth-label" for="email">E-mail Address</label>
+          <label className="auth-label">E-mail Address</label>
           <input className="auth-input" name="email" type="email" placeholder="email@gmail.com" />
         </div>
         <div className="auth-form-item">
-          <label className="auth-label" for="password">Password</label>
+          <label className="auth-label">Password</label>
           <input className="auth-input" name="password" type="password" placeholder="Password"/>
         </div>
         <div className="btn-panel">
