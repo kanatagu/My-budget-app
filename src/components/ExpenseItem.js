@@ -1,15 +1,14 @@
 import React from 'react';
 
-export const ExpenseItem = ({ deleteExpense, expenseItem, expenseText, expenseAmount, expenseKey }) => {
+export const ExpenseItem = ({ deleteExpense, expenseItem, expenseText, expenseAmount }) => {
 
   const deleteHandler = () => {
     deleteExpense(expenseItem.docId);
   }
 
-
   return (
     <>
-      <li><div>{expenseText}<span className="money-minus">{Number(expenseAmount).toLocaleString()} 円</span></div>
+      <li><div>{expenseText}<span className="money-minus">-{Number(expenseAmount).toLocaleString()}円</span></div>
         <button className="delete-btn" onClick={deleteHandler}>×</button>
       </li>
     </>

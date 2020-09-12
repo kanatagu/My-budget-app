@@ -15,6 +15,7 @@ export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseIte
                 incomeText={incomeItem.text}
                 incomeAmount={incomeItem.amount}
                 incomeItem={incomeItem}
+                key={incomeItem.docId}
               />
             ))}
           </ul>
@@ -28,6 +29,7 @@ export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseIte
                 expenseText={expenseItem.text}
                 expenseAmount={expenseItem.amount}
                 expenseItem={expenseItem}
+                key={expenseItem.docId}
               />
             ))}
           </ul>

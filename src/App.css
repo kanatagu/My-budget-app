@@ -181,22 +181,18 @@ h2 {
 
 
 /* 残高 */
-.balance {
-  font-size: 5.0rem;
+
+.balance-container {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-@media screen and (min-width: 768px) {
-  .balance-container {
-    display: flex;
-    justify-content: center;
-  }
+.balance-container > h2 {
+  padding-right: 10px;
+}
 
-  .balance-container > h2 {
-    padding-right: 20px;
-  }
+.balance {
+  font-size: 5.0rem;
 }
 
 
@@ -259,6 +255,7 @@ label {
 
 form > select {
   background: #fafafa;
+  border-radius: 3px;
 }
 
 form input[type="text"] ,input[type="number"] {
@@ -266,6 +263,7 @@ form input[type="text"] ,input[type="number"] {
   width: 230px;
   border: 1px solid #A9A9A9;
   background: #fafafa;
+  border-radius: 3px;
 }
 
 form  select:focus, input[type="text"]:focus ,input[type="number"]:focus {
