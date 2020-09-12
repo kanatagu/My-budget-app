@@ -81,8 +81,6 @@ function Home (props) {
   }
   console.log(expenseItems)
 
-
-
   const deleteExpense = (docId) => {
     db.collection('expenseItems').doc(docId).delete()
   }

@@ -6,10 +6,14 @@ export const Header = () => {
 
   const { currentUser } = useContext(AuthContext)
 
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth()+1;
+
   return (
     <div className="header-form">
       <button className="logout-btn"onClick={() => auth.signOut()}>Sign Out</button>
-      <h1 className="title">2020年9月</h1>
+      <h1 className="title">{year}年{month}月</h1>
     </div>
   )
 }

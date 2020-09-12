@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { withRouter } from "react-router";
+import { Link } from 'react-router-dom'
 import { AuthContext } from "./AuthProvider";
 
 const SignUp = ({ history }) => {
@@ -25,9 +26,10 @@ const SignUp = ({ history }) => {
           <input className="auth-input" name="password" type="password" placeholder="Password"/>
         </div>
         <div className="btn-panel">
-          <button className="auth-btn" type="submit">SIGN UP</button>
+          <button className="signUp-btn" type="submit">SIGN UP</button>
         </div>
       </form>
+      <Link to="/login" className="forSignup-in" >SignInへ戻る</Link>
     </div>
   );
 };

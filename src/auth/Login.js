@@ -27,10 +27,10 @@ const Login = ({ history }) => {
           <input className="auth-input" name="password" type="password" placeholder="Password"/>
         </div>
         <div className="btn-panel">
-          <button className="auth-btn" type="submit">SIGN IN</button>
+          <button className="signIn-btn" type="submit">SIGN IN</button>
         </div>
       </form>
-      <Link to="/signup" className="forSignup" >SignUpはこちら</Link>
+      <Link to="/signup" className="forSignup-in" >SignUpはこちら</Link>
     </div>
   );
 };

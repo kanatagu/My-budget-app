@@ -18,7 +18,22 @@ body {
   min-height: 100vh;
 }
 
-/* AUTHスタイル */
+
+/* PC用の全体表示 */
+@media screen and (min-width: 768px) {
+  body {
+    width: 100%;
+  } 
+
+  .container { 
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+
+/* AUTH画面 */
 .auth-container {
   background: #fafafa;
   margin: 3em auto;
@@ -67,7 +82,24 @@ body {
   text-align: center;
 }
 
-.auth-btn {
+.signIn-btn {
+  background: #6fc4f9;
+  outline: none;
+  border: 1px solid #6fc4f9;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  width: 180px;
+}
+
+.signIn-btn:hover {
+  background: #57baf8;
+}
+
+.signUp-btn {
   background: #f16272;
   outline: none;
   border: 1px solid #f16272;
@@ -80,31 +112,24 @@ body {
   width: 180px;
 }
 
-.auth-btn:hover {
+.signUp-btn:hover {
   background: #ee3e52;
 }
 
-.forSignup {
-  display: inline-block;
+.forSignup-in {
+  display: block;
+  margin: 0 auto;
   text-align: center;
   text-decoration: none;
   color: #8c8c8c;
-  margin: 0 auto;
+  width: 140px;
+  padding-top: 30px;
 }
 
-
-/* PC用の全体表示 */
-@media screen and (min-width: 768px) {
-  body {
-    width: 100%;
-  } 
-
-  .container { 
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
+.forSignup-in:hover{
+  border-bottom: 1px solid #8c8c8c;
 }
+
 
 /* header */
 
@@ -118,9 +143,9 @@ body {
   margin: 0 0 0 auto;
   padding: 10px;
   text-decoration: none;
-  background: #f16272;
+  background: #FF7F50;
   outline: none;
-  border: 1px solid #f16272;
+  border: 1px solid #FF7F50;
   color: #fff;
   cursor: pointer;
   letter-spacing: 1px;
@@ -128,7 +153,7 @@ body {
 } 
 
 .logout-btn:hover {
-  background: #ee3e52;
+  background: #ff6c37;
 }
 
 .title { 
