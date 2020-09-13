@@ -33,7 +33,6 @@ function Home () {
 
   const addIncome = (text, amount) => {
     const sortId = incomeItems.length +1;
-    console.log(sortId)
     const docId = Math.random().toString(32).substring(2);
     db.collection('incomeItems').doc(docId).set({
       uid: currentUser.uid,

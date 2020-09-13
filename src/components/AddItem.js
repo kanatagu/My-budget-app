@@ -14,24 +14,27 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
     setInputAmount(parseInt(e.target.value));
   }
 
+  const reset = () => {
+    setInputText("");
+    setInputAmount("");
+  }
+
   const submitItemHandler = (e) => {
     e.preventDefault();
     if ( type === 'inc' ) {
       addIncome(inputText, inputAmount) 
-      setInputText("");
-      setInputAmount("");
+      reset();
     } else if ( type === 'exp' ) {
       addExpense(inputText, inputAmount)
-      setInputText("");
-      setInputAmount("");
+      reset();
     }
   }
 
   return (
     <form >
       <select onChange={typeHandler}>
-        <option value="inc">＋</option>
-        <option value="exp" >-</option>
+        <option value="inc">+</option>
+        <option value="exp">-</option>
       </select>
       <div className="add-text">
         <label>内容</label>
