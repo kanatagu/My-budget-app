@@ -7,6 +7,7 @@ import { AddItem } from './AddItem';
 import { ItemsList } from './ItemsList';
 import { AuthContext } from '../auth/AuthProvider';
 
+
 function Home () {
 
   const [inputText, setInputText] = useState("");
@@ -83,9 +84,9 @@ function Home () {
   }
 
   return (
-    <>
+    <div className="container">
+      <div className="top">
       <Header />
-      <div className="container">
         <Balance 
           incomeItems={incomeItems}
           expenseItems={expenseItems}
@@ -94,6 +95,7 @@ function Home () {
           incomeItems={incomeItems}
           expenseItems={expenseItems}
         />
+      </div>
         <AddItem
           addIncome={addIncome}
           addExpense={addExpense}
@@ -110,8 +112,7 @@ function Home () {
           incomeItems={incomeItems} 
           expenseItems={expenseItems}
         />
-      </div>
-    </>
+    </div>
   )
 }
 

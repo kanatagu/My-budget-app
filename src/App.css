@@ -2,43 +2,56 @@ html {
   font-size: 62.5%; 
 }
 
+:root {
+  --text-color: #393939;
+  --minus-color: #FF6963;
+  --plus-color: #2ecc71;
+  --white-color: #f7f7f7;
+  --gray-color: #e2e0e0;
+}
+
+:root {
+  --big-font-size: 4.0rem;
+  --h1-font-size: 1.8rem;
+  --h2-font-size: 1.3rem;
+  --total-font-size: 2.5rem;
+  --h3-font-size: 1.8rem;
+  --normal-font-size: 1.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.3rem;
+    --h2-font-size: 1.5rem;
+    --total-font-size: 2.8rem;
+    --h3-font-size: 2rem;
+    --normal-font-size: 1.8rem;
+  }
+}
+
 * {
-  font-size: 1.8rem;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  /* background: #efefef; */
-  background: linear-gradient(to bottom right, #99ccff 0%, #ccffcc 100%);
+  background: #efefef;
+  font-weight: 400;
+  /* background: linear-gradient(to bottom right, #99ccff 0%, #ccffcc 100%); */
   color: #393939;
-  margin: 0 auto;
-  width: 300px;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  font-size: 1.6em;
+  /* margin: 0 auto; */
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
   min-height: 100vh;
 }
 
 
-/* PC用の全体表示 */
-@media screen and (min-width: 768px) {
-  body {
-    width: 100%;
-  } 
-
-  .container { 
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-}
-
-
-/* AUTH画面 */
+/* AUTH PAGE */
 .auth-container {
   background: #fafafa;
   margin: 3em auto;
-  /* padding: 0 1em; */
   width: 300px;
   height: 530px;
 }
@@ -132,14 +145,39 @@ body {
 }
 
 
+/* LAYOUT */
+.container {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+
+
+/* TOP */
+.top {
+  background: url(back-img.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+
 /* header */
 
 .header-form {
-  padding-top: 15px;
+  /* padding-top: 15px; */
 }
 
 .logout-btn {
-  font-size: 1.2rem;
+  text-align: right;
+  /* font-size: 1.2rem;
   display: block;
   margin: 0 0 0 auto;
   padding: 10px;
@@ -150,35 +188,29 @@ body {
   color: #fff;
   cursor: pointer;
   letter-spacing: 1px;
-  border-radius: 5px;
+  border-radius: 5px; */
 } 
 
 .logout-btn:hover {
-  background: #ff6c37;
+  /* background: #ff6c37; */
 }
 
-.title { 
-  font-size: 3.0rem;
-  margin: 15px 0;
-  padding-bottom: 20px;
+h1 { 
+  font-size: var(--h1-font-size);
+  color: var(--gray-color);
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-h2 {
-  padding: 10px 0;
+.logout-btn {
+  display: block;
+  margin: 0 0 0 auto;
 }
 
 @media screen and (min-width: 768px) {
-  .header-form {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .logout-btn {
-    margin-right: 50px;
-  }
 
 }
+
 
 
 /* 残高 */
@@ -188,48 +220,60 @@ h2 {
   justify-content: center;
 }
 
-.balance-container > h2 {
+.balance-container  h2 {
   padding-right: 10px;
+  color: var(--white-color);
+  font-size: var(--h2-font-size);
 }
 
 .balance {
-  font-size: 5.5rem;
+  font-size: var(--big-font-size);
+  color: var(--white-color)
 }
 
 
 /* 収入/支出 */
 .inc-exp-container {
-  margin-bottom: 15px;
-  padding: 20px 0;
-}
-
-
-.income-total {
-  padding: 15px;
-  /* background-color: #2ecc71; */
-  background-color: #2dceca;
-  color: #fafafa;
-  font-size: 2.8rem;
   text-align: center;
+  padding-bottom: 20px;
 }
 
-.income-yen {
-  color: #2ecc71;
-  font-size: 1.5rem;
+.inc-exp-container  h2 {
+  display: inline-block;
 }
 
-.expense-total {
-  padding: 15px;
-  /* background-color: #c0392b; */
-  background-color: #FF6963;
-  color: #fafafa;
-  font-size: 2.9rem;
-  text-align: center;
+.inc-exp-container p {
+  display: inline-block;
 }
 
-.expense-yen {
-  color: #c0392b;
-  font-size: 1.5rem;
+.inc-exp-container h2 {
+  font-size: var(--h2-font-size);
+  margin-right: 25px;
+  color: var(--text-color);
+  line-height: 2.0;
+  vertical-align: middle;
+}
+
+.inc-container {
+  margin: 30px 5px;
+  background-color: var(--plus-color);
+  color: var(--white-color);
+  font-size: var(--total-font-size);
+  line-height : 2.0;
+  border-radius: 3px;
+}
+
+.exp-container {
+  margin: 30px 5px;
+  background-color: var(--minus-color);
+  color: var(--white-color);
+  font-size: var(--total-font-size);
+  line-height : 2.0;
+  border-radius: 3px;
+}
+
+.inc-exp-container span {
+  font-size: var(--h2-font-size);
 }
 
 
@@ -432,7 +476,3 @@ form  select:focus, input[type="text"]:focus ,input[type="number"]:focus {
     width: 350px;
   }
 }
-
-
-
-

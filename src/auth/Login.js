@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from "./AuthProvider";
 import "firebase/auth";
 
+
 const Login = ({ history }) => {
   const { login } = useContext(AuthContext);
   //AuthContextからlogin関数を受け取る

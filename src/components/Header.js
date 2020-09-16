@@ -11,9 +11,9 @@ export const Header = () => {
   const month = today.getMonth()+1;
 
   return (
-    <div className="header-form">
+    <div>
       <button className="logout-btn"onClick={() => auth.signOut()}>Sign Out</button>
-      <h1 className="title">{year}年{month}月</h1>
+      <h1>{year}年{month}月</h1>
     </div>
   )
 }
