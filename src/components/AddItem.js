@@ -1,4 +1,21 @@
 import React from 'react';
+import { styled } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const AddButton = styled(Button)({
+  background: '#87CEEB',
+  border: 0,
+  borderRadius: 3,
+  color: 'white',
+  height: 48,
+  width: '250px',
+  textAlign: 'centner',
+  fontSize: '1.8rem',
+  margin: '10px 0 20px 0',  
+  '&:hover': {
+    backgroundColor: '#3fb8e7',
+  },
+});
 
 export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputAmount, setInputAmount, type, setType}) => {
 
@@ -31,7 +48,7 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
   }
 
   return (
-    <form >
+    <form className="add-form">
       <select onChange={typeHandler}>
         <option value="inc">+</option>
         <option value="exp">-</option>
@@ -42,9 +59,12 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
       </div>
       <div className="add-amount">
         <label>金額</label>
-        <input type="number" value={inputAmount} onChange={inputAmountHandler}/>円
+        <input type="number" value={inputAmount} onChange={inputAmountHandler}/>
+        <div>円</div>
       </div>
-      <button className="add-btn" type="submit" onClick={submitItemHandler}>追加</button>
+      <div className="add-btn">
+      <AddButton type="submit" onClick={submitItemHandler}>追加</AddButton>
+      </div>
     </form>
   )
 

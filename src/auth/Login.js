@@ -3,6 +3,22 @@ import { withRouter } from "react-router";
 import { Link } from 'react-router-dom'
 import { AuthContext } from "./AuthProvider";
 import "firebase/auth";
+import Container from '@material-ui/core/Container';
+import { styled } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const SignInButton = styled(Button)({
+  background: '#6fc4f9',
+  fontSize: '1.8rem',
+  border: 0,
+  borderRadius: 3,
+  color: 'white',
+  padding: '10px 40px',
+  margin: '0 auto',
+  '&:hover': {
+    backgroundColor: '#57baf8',
+  },
+});
 
 
 const Login = ({ history }) => {
@@ -28,7 +44,7 @@ const Login = ({ history }) => {
           <input className="auth-input" name="password" type="password" placeholder="Password"/>
         </div>
         <div className="btn-panel">
-          <button className="signIn-btn" type="submit">SIGN IN</button>
+          <SignInButton type="submit">SIGN IN</SignInButton>
         </div>
       </form>
       <Link to="/signup" className="forSignup-in" >SignUpはこちら</Link>
