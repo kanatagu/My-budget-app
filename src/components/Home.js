@@ -7,6 +7,7 @@ import { AddItem } from './AddItem';
 import { ItemsList } from './ItemsList';
 import { AuthContext } from '../auth/AuthProvider';
 
+
 function Home () {
 
   const [inputText, setInputText] = useState("");
@@ -33,7 +34,6 @@ function Home () {
 
   const addIncome = (text, amount) => {
     const sortId = incomeItems.length +1;
-    console.log(sortId)
     const docId = Math.random().toString(32).substring(2);
     db.collection('incomeItems').doc(docId).set({
       uid: currentUser.uid,
@@ -84,9 +84,9 @@ function Home () {
   }
 
   return (
-    <>
+    <div className="container">
+      <div className="top">
       <Header />
-      <div className="container">
         <Balance 
           incomeItems={incomeItems}
           expenseItems={expenseItems}
@@ -95,6 +95,7 @@ function Home () {
           incomeItems={incomeItems}
           expenseItems={expenseItems}
         />
+      </div>
         <AddItem
           addIncome={addIncome}
           addExpense={addExpense}
@@ -111,8 +112,7 @@ function Home () {
           incomeItems={incomeItems} 
           expenseItems={expenseItems}
         />
-      </div>
-    </>
+    </div>
   )
 }
 
