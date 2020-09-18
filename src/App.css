@@ -41,10 +41,8 @@ html {
 body {
   background: var(--white-color);
   font-weight: 400;
-  /* background: linear-gradient(to bottom right, #99ccff 0%, #ccffcc 100%); */
   color: #393939;
   font-size: 1.6em;
-  /* margin: 0 auto; */
   font-family: 'Open Sans', "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
   min-height: 100vh;
 }
@@ -90,7 +88,7 @@ body {
   outline: none;
   border-radius: 3px;
   border: 1px solid #c0c0c0;
-  color: var(--white-color);
+  color: var(--text-color);
 }
 
 .auth-bottom {
@@ -228,6 +226,16 @@ body {
 
 .inc-exp-container span {
   font-size: var(--h2-font-size);
+}
+
+.totalPercentage {
+  margin-left: 20px;
+  justify-content: flex-end;
+  background: #f89bc9;
+  color: var(--white-color);
+  font-size: var(--h2-font-size);
+  align-items: center;
+  line-height: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -370,12 +378,14 @@ body {
   background: var(--white-color);
   text-align: bottom;
   padding-top: 2px;
+  cursor: pointer;
+  outline: none;
+  font-size: 2rem;
 }
 
 .list li:hover .delete-btn {
   opacity: 1;
   transition : .3s;
-  outline: none;
 }
 
 .list li:hover .money-plus, .list li:hover .money-minus {

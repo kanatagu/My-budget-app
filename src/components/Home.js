@@ -7,7 +7,6 @@ import { AddItem } from './AddItem';
 import { ItemsList } from './ItemsList';
 import { AuthContext } from '../auth/AuthProvider';
 
-
 function Home () {
 
   const [inputText, setInputText] = useState("");

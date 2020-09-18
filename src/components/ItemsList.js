@@ -30,6 +30,7 @@ export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseIte
                 expenseAmount={expenseItem.amount}
                 expenseItem={expenseItem}
                 key={expenseItem.docId}
+                incomeItems={incomeItems}
               />
             ))}
           </ul>

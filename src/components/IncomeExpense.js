@@ -10,6 +10,15 @@ export const IncomeExpense = ({ incomeItems, expenseItems }) => {
 
   const expenseTotal = expenseAmounts.reduce((acc, cur) => acc += cur, 0);
 
+  const percentage = () => {
+    if (incomeTotal >= 1) {
+      return `${Math.round((expenseTotal / incomeTotal) * 100)} %`;
+    } else {
+      return '--';
+    }
+  };
+  
+
   return (
     <div className="inc-exp-container">
       <div className="inc-container">
@@ -19,6 +28,7 @@ export const IncomeExpense = ({ incomeItems, expenseItems }) => {
       <div className="exp-container">
         <h2>支出</h2>
         <p className="expense-total">- {Number(expenseTotal).toLocaleString()}<span> 円</span></p>
+        <div className="totalPercentage">{percentage()}</div>
       </div>
     </div>
   )

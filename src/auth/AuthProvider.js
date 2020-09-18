@@ -6,9 +6,6 @@ const AuthContext = React.createContext()
 const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
 
-
-
-
   //サインアップ後認証情報を更新
   const signup = async (email, password, history) => {
     try { 
