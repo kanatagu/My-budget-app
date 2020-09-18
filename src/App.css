@@ -19,6 +19,7 @@ html {
   --total-font-size: 2.5rem;
   --h3-font-size: 1.8rem;
   --normal-font-size: 1.8rem;
+  --percentage-font-size: 1.0rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -29,6 +30,7 @@ html {
     --total-font-size: 2.7rem;
     --h3-font-size: 2rem;
     --normal-font-size: 1.8rem;
+    --percentage-font-size: 1.2rem;
   }
 }
 
@@ -175,7 +177,7 @@ body {
 }
 
 .balance-container  h2 {
-  padding-right: 10px;
+  padding-: 10px;
   color: var(--white-color);
   font-size: var(--h2-font-size);
 }
@@ -197,11 +199,14 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px 0 30px 0;
+  width: 300px;
+  margin: 0 auto;
 }
 
 .inc-exp-container h2 {
   font-size: var(--h2-font-size);
-  margin-right: 40px;
+  text-align: right;
+  width: 50px;
   color: var(--text-color);
   line-height: 2.0;
 }
@@ -209,33 +214,48 @@ body {
 .inc-container, .exp-container {
   display: flex;
   align-items: center;
-  margin: 20px 5px;
+  margin: 20px 0;
   background-color: var(--plus-color);
   color: var(--white-color);
   font-size: var(--total-font-size);
   line-height : 2.0;
   border-radius: 3px;
-  justify-content: center;
-  width: 300px;
+  justify-content: flex-start;
 }
 
 .exp-container {
-  margin: 0 5px;
+  margin: 0;
   background-color: var(--minus-color);
+  display: flex;
+  justify-content: flex-end;
 }
 
 .inc-exp-container span {
   font-size: var(--h2-font-size);
 }
 
+.income-total {
+  padding-right: 60px;
+}
+
 .totalPercentage {
-  margin-left: 20px;
-  justify-content: flex-end;
+  justify-content: center;
   background: #f89bc9;
   color: var(--white-color);
-  font-size: var(--h2-font-size);
+  font-size: var(--percentage-font-size);
+  line-height: 2.0;
+  width: 40px;
+  text-align: center;
+  margin: 0 10px;
+  border-radius: 3px;
+}
+
+.right {
+  width: 250px;
+  display: flex;
+  justify-content: flex-end;
+  /* background: blue; */
   align-items: center;
-  line-height: 20px;
 }
 
 @media screen and (min-width: 768px) {
