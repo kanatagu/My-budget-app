@@ -3,11 +3,14 @@ import { Route } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import Login from "./Login";
 
-const PrivateRoute = ({ component: RouteComponent, ...options}) => {
+const PrivateRoute = ({ component, ...rest }) => {
   const { currentUser } = useContext(AuthContext);
-  const Component = currentUser ? RouteComponent : Login;
+  //AuthContextからcurrentUserを受け取る
 
-  return <Route {...options} component={Component} />;
+  const renderingComponent = currentUser ? component : Login;
+  //currentUserがtrueの場合component＝Home、falseならLoginコンポーネントにroute
+
+  return <Route {...rest} component={renderingComponent} />;
 };
 
 export default PrivateRoute;
