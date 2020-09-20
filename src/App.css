@@ -17,9 +17,13 @@ html {
   --h1-font-size: 2.0rem;
   --h2-font-size: 1.3rem;
   --total-font-size: 2.5rem;
-  --h3-font-size: 1.8rem;
+  --h3-font-size: 1.6rem;
   --normal-font-size: 1.8rem;
-  --percentage-font-size: 1.0rem;
+  --topPercentage-font-size: 1.0rem;
+}
+
+:root {
+  --normal-font-weight: 300;
 }
 
 @media screen and (min-width: 768px) {
@@ -30,7 +34,7 @@ html {
     --total-font-size: 2.7rem;
     --h3-font-size: 2rem;
     --normal-font-size: 1.8rem;
-    --percentage-font-size: 1.2rem;
+    --topPercentage-font-size: 1.2rem;
   }
 }
 
@@ -128,6 +132,7 @@ body {
 /* LAYOUT */
 .container {
   margin: 0 auto;
+  font-size: var(--normal-font-size);
 }
 
 @media screen and (min-width: 768px) {
@@ -177,7 +182,7 @@ body {
 }
 
 .balance-container  h2 {
-  padding-: 10px;
+  padding-right: 5px;
   color: var(--white-color);
   font-size: var(--h2-font-size);
 }
@@ -208,6 +213,7 @@ body {
   text-align: right;
   width: 50px;
   color: var(--text-color);
+  font-weight: var(--normal-font-size);
   line-height: 2.0;
 }
 
@@ -242,9 +248,9 @@ body {
   justify-content: center;
   background: #f89bc9;
   color: var(--white-color);
-  font-size: var(--percentage-font-size);
-  line-height: 2.0;
-  width: 40px;
+  font-size: var(--topPercentage-font-size);
+  line-height: 1.8;
+  width: 35px;
   text-align: center;
   margin: 0 10px;
   border-radius: 3px;
@@ -254,7 +260,6 @@ body {
   width: 250px;
   display: flex;
   justify-content: flex-end;
-  /* background: blue; */
   align-items: center;
 }
 
@@ -309,6 +314,7 @@ body {
   border-radius: 3px;
   color: #393939;
   padding: 5px;
+  font-size: 1.6rem; 
 }
 
 .add-form  select:focus, input[type="text"]:focus ,input[type="number"]:focus {
@@ -351,37 +357,44 @@ body {
 
 
 /* LIST */
+
 .list-container {
   padding: 50px 10px;
-  background-color: var(--white-color);
 }
 
 .list {
-  list-style: none;
   margin-bottom: 50px;
   margin-top: 10px;
 }
 
 .list li {
+  display: flex;
+  justify-content: space-between;
   position: relative;
   margin-bottom: 10px;
   padding: 10px;
-  border-radius: 3px;
-}
-
-.list li div {
   border-bottom: 1px solid #e7e7e7;
-  padding: 5px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.money-minus {
-  color: var(--minus-color);
 }
 
 .money-plus {
   color: var(--plus-color);
+}
+
+.money-minus {
+  color: var(--minus-color);
+  align-items: center;
+  display: flex;
+}
+
+.money-minus span {
+  display: inline-block;
+  background: #fac9e2;
+  color: var(--minus-color);
+  font-size: 1.3rem;
+  padding: 0 3px;
+  text-align: center;
+  margin-left: 5px;
+  border-radius: 5px;
 }
 
 .delete-btn {

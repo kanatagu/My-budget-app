@@ -20,10 +20,10 @@ export const ExpenseItem = ({ deleteExpense, expenseItem, expenseText, expenseAm
 
   return (
     <li>
-      <div>{expenseText}<span className="money-minus">-{Number(expenseAmount).toLocaleString()}円</span>
-      </div>
-      <div className="ItemPercentage">{percentage()}</div>
+      <div className="text">{expenseText}</div>
+      <div className="money-minus">-{Number(expenseAmount).toLocaleString()}円<span>{percentage()}</span>
       <button className="delete-btn" onClick={deleteHandler}>×</button>
+      </div>
     </li>
   )
 }
