@@ -38,7 +38,9 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
 
   const submitItemHandler = (e) => {
     e.preventDefault();
-    if ( type === 'inc' ) {
+    if (inputText == '' || inputAmount == '0' || inputAmount == '') {
+      alert ('入力してください')
+    } else if ( type === 'inc' && inputText ) {
       addIncome(inputText, inputAmount) 
       reset();
     } else if ( type === 'exp' ) {
@@ -55,7 +57,7 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
       </select>
       <div className="add-text">
         <label>内容</label>
-        <input type="text" value={inputText} onChange={inputTextHandler} />
+        <input type="text" value={inputText} onChange={inputTextHandler}/>
       </div>
       <div className="add-amount">
         <label>金額</label>

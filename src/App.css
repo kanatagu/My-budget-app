@@ -90,11 +90,12 @@ body {
   display: flex;
   height: 40px;
   width:250px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   outline: none;
   border-radius: 3px;
   border: 1px solid #c0c0c0;
   color: var(--text-color);
+  padding: 5px;
 }
 
 .auth-bottom {
@@ -315,6 +316,10 @@ body {
   color: #393939;
   padding: 5px;
   font-size: 1.6rem; 
+}
+
+.add-form input[type="number"] {
+  text-align: right;
 }
 
 .add-form  select:focus, input[type="text"]:focus ,input[type="number"]:focus {
