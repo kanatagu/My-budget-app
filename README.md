@@ -1,22 +1,22 @@
 # My Budget App 
 
-This is simple budget app to track daily living expenses. 
+This is simple budget app to track your living expenses. 
 
 ## Demo 
 
-Main page  
-![mainpic](https://user-images.githubusercontent.com/66394413/94086467-0a2b5800-fe46-11ea-91ee-998fe3357a7b.png)
+:cherry_blossom: Main page  
+![mainpic](https://user-images.githubusercontent.com/66394413/94089051-06e79a80-fe4d-11ea-845c-0155101050d5.png)
 
-SignIn page  
-![Page-Signin](https://user-images.githubusercontent.com/66394413/94086564-465eb880-fe46-11ea-9875-1536b98905db.png)
+:cherry_blossom: SignIn page  
+![Page-Signin](https://user-images.githubusercontent.com/66394413/94089007-eae3f900-fe4c-11ea-8550-58f0e6f4f4cb.png)
 
 
-SignUp page  
-![Page-Signup](https://user-images.githubusercontent.com/66394413/94086571-51194d80-fe46-11ea-8993-2a56212defd5.png)
+:cherry_blossom: SignUp page  
+![Page-Signup](https://user-images.githubusercontent.com/66394413/94088812-5c6f7780-fe4c-11ea-86df-dc3eeeac43b7.png) 
 
-Movie   
+:cherry_blossom: Movie   
 *Sorry for the low image quality  
-![app_gif](https://user-images.githubusercontent.com/66394413/94087260-48297b80-fe48-11ea-8be1-c4b9cfca27ab.gif)
+![app_gif](https://user-images.githubusercontent.com/66394413/94087260-48297b80-fe48-11ea-8be1-c4b9cfca27ab.gif)  
 
 
 ## Features 
@@ -33,8 +33,8 @@ Movie
 
 
 ## Installation
-React `npx create-react-app my-app cd my-app`  
-Firebase `npm install -g firebase-tools`
+- React `npx create-react-app my-app cd my-app`  
+- Firebase `npm install -g firebase-tools`
 
 
 ## Deployment
@@ -42,7 +42,7 @@ Firebase `npm install -g firebase-tools`
 - To view it in the Local browser  
 
 `npm start`  
-Open [http://localhost:3000](http://localhost:3000)
+ Open [http://localhost:3000](http://localhost:3000)
 
 - To deploy in public  
 
@@ -50,7 +50,7 @@ Open [http://localhost:3000](http://localhost:3000)
 `firebase login`
 
 **Note**  
-choose `build` for public direcory. initial setting was `public`  
+choose `build` for public direcory as initial setting was `public`  
 
 `npm run build`  
 
