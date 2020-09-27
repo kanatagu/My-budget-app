@@ -42,11 +42,12 @@ This is simple budget app to track your living expenses.
 - To view it in the Local browser  
 
 `npm start`  
- Open [http://localhost:3000](http://localhost:3000)
+→ Open [http://localhost:3000](http://localhost:3000)
 
 - To deploy in public  
 
-`firebase init` chooase FireStore, Functions, Hosting  
+`firebase init` 
+→　chooase FireStore, Functions, Hosting  
 `firebase login`
 
 **Note**  
