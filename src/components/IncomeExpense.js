@@ -1,10 +1,6 @@
 import React from 'react';
 
-export const IncomeExpense = ({ incomeItems, expenseItems }) => {
-
-  const incomeAmounts = incomeItems.map(incomeItem => incomeItem.amount);
-
-  const incomeTotal = incomeAmounts.reduce((acc, cur) => acc += cur, 0);
+export const IncomeExpense = ({ incomeTotal, expenseItems }) => {
 
   const expenseAmounts = expenseItems.map(expenseItem => expenseItem.amount);
 

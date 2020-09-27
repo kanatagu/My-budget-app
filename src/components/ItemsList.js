@@ -2,7 +2,7 @@ import React from 'react';
 import { IncomeItem } from './IncomeItem';
 import { ExpenseItem } from './ExpenseItem';
 
-export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseItems }) => {
+export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseItems, incomeTotal }) => {
 
   return (
     <div className="list-container">
@@ -30,7 +30,7 @@ export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseIte
                 expenseAmount={expenseItem.amount}
                 expenseItem={expenseItem}
                 key={expenseItem.docId}
-                incomeItems={incomeItems}
+                incomeTotal={incomeTotal}
               />
             ))}
           </ul>

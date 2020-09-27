@@ -1,14 +1,10 @@
 import React from 'react';
 
-export const ExpenseItem = ({ deleteExpense, expenseItem, expenseText, expenseAmount, incomeItems }) => {
+export const ExpenseItem = ({ deleteExpense, expenseItem, expenseText, expenseAmount, incomeTotal }) => {
 
   const deleteHandler = () => {
     deleteExpense(expenseItem.docId);
   }
-
-  const incomeAmounts = incomeItems.map(incomeItem => incomeItem.amount);
-
-  const incomeTotal = incomeAmounts.reduce((acc, cur) => acc += cur, 0);
 
   const percentage = () => {
     if (incomeTotal >= 1) {

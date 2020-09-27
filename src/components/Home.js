@@ -6,6 +6,7 @@ import { IncomeExpense } from './IncomeExpense';
 import { AddItem } from './AddItem';
 import { ItemsList } from './ItemsList';
 import { AuthContext } from '../auth/AuthProvider';
+import { totalCalc } from './TotalIncomeExpense';
 
 function Home () {
 
@@ -82,6 +83,9 @@ function Home () {
     db.collection('expenseItems').doc(docId).delete()
   }
 
+  // calculate % and show total
+  const incomeTotal = totalCalc(incomeItems);
+
   return (
     <div className="container">
       <div className="top">
@@ -91,7 +95,7 @@ function Home () {
           expenseItems={expenseItems}
         />
         <IncomeExpense 
-          incomeItems={incomeItems}
+          incomeTotal={incomeTotal}
           expenseItems={expenseItems}
         />
       </div>
@@ -108,6 +112,7 @@ function Home () {
         <ItemsList 
           deleteIncome={deleteIncome}
           deleteExpense={deleteExpense}
+          incomeTotal={incomeTotal}
           incomeItems={incomeItems} 
           expenseItems={expenseItems}
         />
