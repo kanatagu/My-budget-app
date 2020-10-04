@@ -9,7 +9,7 @@ html {
   --minus-color: #FF6963;
   --plus-color: #2ecc71;
   --white-color: #f7f7f7;
-  --gray-color: #e9e5e5c2;
+  --gray-color: #eee8e8cc;
 }
 
 :root {
@@ -29,7 +29,7 @@ html {
 @media screen and (min-width: 768px) {
   :root {
     --big-font-size: 4.5rem;
-    --h1-font-size: 2.3rem;
+    --h1-font-size: 2.5rem;
     --h2-font-size: 1.5rem;
     --total-font-size: 2.7rem;
     --h3-font-size: 2rem;
@@ -166,7 +166,25 @@ body {
   font-size: var(--h1-font-size);
   color: var(--gray-color);
   text-align: center;
-  margin-bottom: 1.5rem;
+}
+
+.showMonth {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.showMonth > button {
+  background: rgb(107, 95, 85);
+  color: var(--white-color);
+  margin: 0 5rem;
+  cursor: pointer;
+  font-size: var(--h2-font-size);
+  text-align: center;
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 768px) {
