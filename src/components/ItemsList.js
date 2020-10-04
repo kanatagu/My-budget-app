@@ -1,8 +1,9 @@
 import React from 'react';
 import { IncomeItem } from './IncomeItem';
 import { ExpenseItem } from './ExpenseItem';
+import { database } from 'firebase';
 
-export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseItems, incomeTotal }) => {
+export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseItems, incomeTotal, selectedMonth, thisMonth}) => {
 
   return (
     <div className="list-container">
@@ -16,6 +17,8 @@ export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseIte
                 incomeAmount={incomeItem.amount}
                 incomeItem={incomeItem}
                 key={incomeItem.docId}
+                selectedMonth={selectedMonth}
+                thisMonth={thisMonth}
               />
             ))}
           </ul>
@@ -31,6 +34,8 @@ export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseIte
                 expenseItem={expenseItem}
                 key={expenseItem.docId}
                 incomeTotal={incomeTotal}
+                selectedMonth={selectedMonth}
+                thisMonth={thisMonth}
               />
             ))}
           </ul>

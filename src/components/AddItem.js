@@ -17,7 +17,7 @@ const AddButton = styled(Button)({
   },
 });
 
-export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputAmount, setInputAmount, type, setType}) => {
+export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputAmount, setInputAmount, type, setType, selectedMonth, thisMonth}) => {
 
   const typeHandler = (e) => {
     setType(e.target.value);
@@ -48,9 +48,11 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
       reset();
     }
   }
-
-  return (
-    <form className="add-form">
+  
+  function showForm() {
+    if (thisMonth === selectedMonth ) {
+      return (
+      <form className="add-form">
       <select onChange={typeHandler}>
         <option value="inc">+</option>
         <option value="exp">-</option>
@@ -67,7 +69,16 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
       <div className="add-btn">
       <AddButton type="submit" onClick={submitItemHandler}>追加</AddButton>
       </div>
-    </form>
+    </form> )
+    } else {
+      return (
+        <form></form>
+      )
+    }
+  }
+
+  return (
+    showForm()
   )
 
 } 

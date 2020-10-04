@@ -166,18 +166,18 @@ body {
   font-size: var(--h1-font-size);
   color: var(--gray-color);
   text-align: center;
+  margin: 0 3rem;
 }
 
 .showMonth {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin: 3rem 0 2rem 0;
 }
 
 .showMonth > button {
   background: rgb(107, 95, 85);
-  color: var(--white-color);
-  margin: 0 5rem;
+  color: var(--gray-color);
   cursor: pointer;
   font-size: var(--h2-font-size);
   text-align: center;
@@ -190,6 +190,9 @@ body {
 @media screen and (min-width: 768px) {
   .head {
     width: 750px;
+  }
+  .head h1 { 
+    margin: 0 5rem;
   }
 }
 
@@ -432,19 +435,19 @@ body {
   color: #F08080;
   border: 1px solid #F08080;
   background: var(--white-color);
-  text-align: bottom;
+  text-align: center;
   padding-top: 2px;
   cursor: pointer;
   outline: none;
   font-size: 2rem;
 }
 
-.list li:hover .delete-btn {
+.thisMonthList:hover .delete-btn {
   opacity: 1;
   transition : .3s;
 }
 
-.list li:hover .money-plus, .list li:hover .money-minus {
+.thisMonthList:hover .money-plus, .thisMonthList:hover .money-minus {
   margin-right: 30px;
   transition : .3s;
 }
