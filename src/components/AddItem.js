@@ -49,10 +49,15 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
     }
   }
 
+  const selectedMonth = date.getMonth() + 1;
 
+  const today = new Date();
+  const thisMonth = today.getMonth() + 1;
 
-  return (
-    <form className="add-form">
+  function showForm() {
+    if (thisMonth === selectedMonth ) {
+      return (
+      <form className="add-form">
       <select onChange={typeHandler}>
         <option value="inc">+</option>
         <option value="exp">-</option>
@@ -69,7 +74,17 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
       <div className="add-btn">
       <AddButton type="submit" onClick={submitItemHandler}>追加</AddButton>
       </div>
-    </form>
+    </form> )
+    } else {
+      return (
+      <form>
+      </form>
+      )
+    }
+  }
+
+  return (
+    showForm()
   )
 
 } 

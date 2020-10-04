@@ -55,6 +55,7 @@ function Home () {
 
   console.log(startOfMonth(date));
   console.log(endOfMonth(date));
+  console.log(date.getMonth() + 1);
 
   const getIncomeData = () => {
     const incomeData = db.collection('incomeItems')
