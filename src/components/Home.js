@@ -146,6 +146,7 @@ function Home () {
           setInputAmount={setInputAmount}
           type={type}
           setType={setType}
+          date={date}
         />
         <ItemsList 
           deleteIncome={deleteIncome}

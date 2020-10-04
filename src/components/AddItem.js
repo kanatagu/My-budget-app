@@ -17,7 +17,7 @@ const AddButton = styled(Button)({
   },
 });
 
-export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputAmount, setInputAmount, type, setType}) => {
+export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputAmount, setInputAmount, type, setType, date}) => {
 
   const typeHandler = (e) => {
     setType(e.target.value);
@@ -48,6 +48,8 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
       reset();
     }
   }
+
+
 
   return (
     <form className="add-form">
