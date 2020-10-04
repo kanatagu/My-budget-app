@@ -17,7 +17,7 @@ const AddButton = styled(Button)({
   },
 });
 
-export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputAmount, setInputAmount, type, setType, date}) => {
+export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputAmount, setInputAmount, type, setType, selectedMonth, thisMonth}) => {
 
   const typeHandler = (e) => {
     setType(e.target.value);
@@ -48,12 +48,7 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
       reset();
     }
   }
-
-  const selectedMonth = date.getMonth() + 1;
-
-  const today = new Date();
-  const thisMonth = today.getMonth() + 1;
-
+  
   function showForm() {
     if (thisMonth === selectedMonth ) {
       return (
@@ -77,8 +72,7 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
     </form> )
     } else {
       return (
-      <form>
-      </form>
+        <form></form>
       )
     }
   }

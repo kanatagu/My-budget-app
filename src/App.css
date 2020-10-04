@@ -442,12 +442,12 @@ body {
   font-size: 2rem;
 }
 
-.list li:hover .delete-btn {
+.thisMonthList:hover .delete-btn {
   opacity: 1;
   transition : .3s;
 }
 
-.list li:hover .money-plus, .list li:hover .money-minus {
+.thisMonthList:hover .money-plus, .thisMonthList:hover .money-minus {
   margin-right: 30px;
   transition : .3s;
 }

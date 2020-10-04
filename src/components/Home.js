@@ -31,6 +31,7 @@ function Home () {
     getExpenseData();
   }, [date]);
 
+  //for Header
   const setPrevMonth = () => {
     const year = date.getFullYear();
     const month = date.getMonth()-1;
@@ -45,17 +46,20 @@ function Home () {
     setDate(new Date(year, month, day));
   }
 
+  //get first date of the month
   const startOfMonth = (date) => {
     return new Date(date.getFullYear(), date.getMonth(), 1);
   }
 
+  //get last date of this month
   const endOfMonth = (date) => {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0);
   }
 
-  console.log(startOfMonth(date));
-  console.log(endOfMonth(date));
-  console.log(date.getMonth() + 1);
+  //operate add form and income/expense list
+  const selectedMonth = date.getMonth() + 1;
+  const today = new Date();
+  const thisMonth = today.getMonth() + 1;
 
   const getIncomeData = () => {
     const incomeData = db.collection('incomeItems')
@@ -120,7 +124,6 @@ function Home () {
   // calculate % and show total
   const incomeTotal = totalCalc(incomeItems);
 
-
   return (
     <div className="container">
       <div className="top">
@@ -147,7 +150,8 @@ function Home () {
           setInputAmount={setInputAmount}
           type={type}
           setType={setType}
-          date={date}
+          selectedMonth={selectedMonth}
+          thisMonth={thisMonth}
         />
         <ItemsList 
           deleteIncome={deleteIncome}
@@ -155,6 +159,8 @@ function Home () {
           incomeTotal={incomeTotal}
           incomeItems={incomeItems} 
           expenseItems={expenseItems}
+          selectedMonth={selectedMonth}
+          thisMonth={thisMonth}
         />
     </div>
   )
