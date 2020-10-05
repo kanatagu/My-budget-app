@@ -6,7 +6,7 @@ import { IncomeExpense } from './IncomeExpense';
 import { AddItem } from './AddItem';
 import { ItemsList } from './ItemsList';
 import { AuthContext } from '../auth/AuthProvider';
-import { totalCalc } from './TotalIncomeExpense';
+import { totalCalc } from './TotalIncome';
 import firebase from "firebase/app";
 import "firebase/firestore";
 
@@ -61,6 +61,7 @@ function Home () {
   const today = new Date();
   const thisMonth = today.getMonth() + 1;
 
+  //firebase IncomeData
   const getIncomeData = () => {
     const incomeData = db.collection('incomeItems')
     incomeData.where('uid', '==', currentUser.uid).orderBy('date').startAt(startOfMonth(date)).endAt(endOfMonth(date)).onSnapshot(query => {
@@ -85,12 +86,12 @@ function Home () {
       ]); 
     })
   }
-  console.log(incomeItems)
   
   const deleteIncome = (docId) => {
     db.collection('incomeItems').doc(docId).delete()
   }
 
+  //firebase Expense data
   const getExpenseData = () => {
     const expenseData = db.collection('expenseItems')
     expenseData.where('uid', '==', currentUser.uid).orderBy('date').startAt(startOfMonth(date)).endAt(endOfMonth(date)).onSnapshot(query => {
@@ -115,7 +116,6 @@ function Home () {
       ]); 
     })
   }
-  console.log(expenseItems)
 
   const deleteExpense = (docId) => {
     db.collection('expenseItems').doc(docId).delete()
@@ -133,7 +133,7 @@ function Home () {
           setNextMonth={setNextMonth}
         />
         <Balance 
-          incomeItems={incomeItems}
+          incomeTotal={incomeTotal}
           expenseItems={expenseItems}
         />
         <IncomeExpense 

@@ -48,37 +48,40 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
       reset();
     }
   }
-  
-  function showForm() {
-    if (thisMonth === selectedMonth ) {
-      return (
+
+  const thisMonthForm = () => {
+    return (
       <form className="add-form">
-      <select onChange={typeHandler}>
-        <option value="inc">+</option>
-        <option value="exp">-</option>
-      </select>
-      <div className="add-text">
-        <label>内容</label>
-        <input type="text" value={inputText} onChange={inputTextHandler}/>
-      </div>
-      <div className="add-amount">
-        <label>金額</label>
-        <input type="number" value={inputAmount} onChange={inputAmountHandler}/>
-        <div>円</div>
-      </div>
-      <div className="add-btn">
-      <AddButton type="submit" onClick={submitItemHandler}>追加</AddButton>
-      </div>
-    </form> )
-    } else {
-      return (
-        <form></form>
-      )
-    }
+        <select onChange={typeHandler}>
+          <option value="inc">+</option>
+          <option value="exp">-</option>
+        </select>
+        <div className="add-text">
+          <label>内容</label>
+          <input type="text" value={inputText} onChange={inputTextHandler}/>
+        </div>
+        <div className="add-amount">
+          <label>金額</label>
+          <input type="number" value={inputAmount} onChange={inputAmountHandler}/>
+          <div>円</div>
+        </div>
+        <div className="add-btn">
+        <AddButton type="submit" onClick={submitItemHandler}>追加</AddButton>
+        </div>
+      </form> 
+    )
   }
 
+  const otherMonthForm = () => {
+    return (
+      <form></form>
+    )
+  }
+        
   return (
-    showForm()
+    <>
+    {thisMonth === selectedMonth ? thisMonthForm() : otherMonthForm()}
+    </>
   )
-
+  
 } 
