@@ -38,9 +38,9 @@ export const AddItem = ({ addIncome, addExpense, inputText, setInputText, inputA
 
   const submitItemHandler = (e) => {
     e.preventDefault();
-    if (inputText == '' || inputAmount == '0' || inputAmount == '') {
-      alert ('入力してください')
-    } else if ( type === 'inc' && inputText ) {
+    if (inputText == '' || inputAmount == '0' || !(inputAmount > 0 && inputAmount <= 10000000)) {
+      alert ('正しい内容を入力してください')
+    } else if ( type === 'inc') {
       addIncome(inputText, inputAmount) 
       reset();
     } else if ( type === 'exp' ) {
